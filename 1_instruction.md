@@ -46,7 +46,7 @@ Key inputs include:
 |WRS_PATH |	Landsat WRS path|
 |WRS_ROW |	Landsat WRS row|	
 |DATASET_NAME|	Landsat dataset|
-|OAHU_MBR|Bounding box used to reduce search size|
+|SEARCH_MBR|Bounding box used to reduce search size|
 |YOUR_USGS_USERNAME| USGS username| 
 |YOUR_M2M_TOKEN| USGS API token|
 ## Main Outputs
