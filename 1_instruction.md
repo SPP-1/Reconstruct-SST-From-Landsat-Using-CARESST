@@ -1,8 +1,9 @@
 # Script Overview
 
-This script is used to bulk download Landsat 8/9 Collection 2 Level-2 (.tar) data from the USGS M2M API for a specified WRS Path/Row and date range.
+This script is used to bulk download Landsat 8/9 Collection 2 Level-2 (.tar) data from the USGS M2M API for a specified WRS Path/Row and date range in cell1. And then cell2 extracts all downloaded Landsat .tar files into individual scene folders.
 
-## The workflow automatically:
+## Cell1
+### The workflow automatically:
 
 1. Searches Landsat scenes from USGS
 2. Filters scenes by WRS Path/Row
@@ -11,16 +12,16 @@ This script is used to bulk download Landsat 8/9 Collection 2 Level-2 (.tar) dat
 5. Downloads .tar files in parallel
 6. Automatically retries failed or missing downloads
 
-## Required Libraries
+### Required Libraries
 
 Install required Python libraries:
 ```
 pip install pandas requests tqdm
 ```
-## USGS M2M Token Setup
+### USGS M2M Token Setup
 The script requires a USGS M2M API token.
 
-### Steps
+#### Steps
 1. Log in to your USGS EROS account
 2. Click your username (top-right corner)
 3. Open User Profile
@@ -35,7 +36,7 @@ You can either:
 ```
 set USGS_M2M_TOKEN=YOUR_TOKEN
 ```
-## Main Inputs
+### Main Inputs - Cell1
 The main user settings are located in the ```USER SETTINGS``` section.
 Key inputs include:
 |Variable|Description|
@@ -49,7 +50,7 @@ Key inputs include:
 |SEARCH_MBR|Bounding box used to reduce search size|
 |YOUR_USGS_USERNAME| USGS username| 
 |YOUR_M2M_TOKEN| USGS API token|
-## Main Outputs
+### Main Outputs - Cell1
 Downloaded files are saved to:
 ```
 landsat_c2_l2_tar/*.tar
@@ -60,3 +61,17 @@ The script also saves:
 |manifest_*.json|	Saved scene list |	
 |missing_entityIds_*.json|	Missing/failed downloads |	
 |retry_report_*.json|	Retry summary report |
+
+## Cell2
+### What It Does
+- Reads all ```.tar``` files from:
+```
+TAR_DIR = DOWNLOAD_DIR
+```
+- Extracts each scene into:
+```
+../SITE/landsat_c2_l2_extracted/
+```
+- Uses parallel processing (ThreadPoolExecutor) to speed up extraction.
+- Automatically skips scenes that were already extracted.
+- Optionally deletes ```.tar``` files after extraction.
