@@ -49,3 +49,14 @@ Key inputs include:
 |OAHU_MBR|Bounding box used to reduce search size|
 |YOUR_USGS_USERNAME| USGS username| 
 |YOUR_M2M_TOKEN| USGS API token|
+## Main Outputs
+Downloaded files are saved to:
+```
+landsat_c2_l2_tar/*.tar
+```
+The script also saves:
+|Output|Description|
+|-------|--------|
+|manifest_*.json|	Saved scene list |	
+|missing_entityIds_*.json|	Missing/failed downloads |	
+|retry_report_*.json|	Retry summary report |
