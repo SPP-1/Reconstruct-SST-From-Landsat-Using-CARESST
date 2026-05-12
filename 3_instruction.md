@@ -102,4 +102,4 @@ One limitation of the current workflow is that the cloud and shadow masks may no
 
 As a result, some cloud-affected pixels may still remain in the final SST products, particularly around cloud boundaries. These contaminated regions can introduce unrealistic temperature artifacts and may affect later reconstruction or temporal augmentation steps.
 
-# The generated masks and exported products will be downloaded from Google Drive using Colab after the Earth Engine export tasks are completed.#
+# The generated masks and exported products will be downloaded from Google Drive using Colab after the Earth Engine export tasks are completed.
