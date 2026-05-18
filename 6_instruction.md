@@ -77,3 +77,21 @@ https://urs.earthdata.nasa.gov/documentation/for_users
 The main user settings are located in the ```USER CONFIG``` section.
 
 Key inputs include:
+|Variable|Description|
+|-------|--------|
+|START_DATE|	Start date for VIIRS download |	
+|END_DATE| End date for VIIRS download |	
+|DATE_ACQUIRED|	Example Landsat acquisition date |
+|SCENE_CENTER_TIME |	Example Landsat scene center time (from extracted landsat folder *_MTL.txt)|
+|points |	AOI corner/control points|
+|BUFFER_DEG|Geographic buffer around AOI|
+|SHORT_NAME_PM|VIIRS product short name|
+|USE_PM|Download PM product|
+|OUT_ROOT|Output root directory|
+
+## Main Outputs
+|Output|Description|
+|-------|--------|
+|raw/YYYY-MM/PM/*.nc|Downloaded VIIRS files|
+|Search logs|Number of files found|
+|Download logs|Number of files downloaded|
